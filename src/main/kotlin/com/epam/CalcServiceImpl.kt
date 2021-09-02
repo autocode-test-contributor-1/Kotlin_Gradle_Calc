@@ -1,7 +1,8 @@
 package com.epam
 
 class CalcServiceImpl : CalcService {
-    override fun add(a: Int, b: Int) : Int {
+    override fun add(a: Int, b: Int): Int {
+        recursivePrint(1)
         return a + b
     }
 
@@ -16,5 +17,12 @@ class CalcServiceImpl : CalcService {
     override fun divide(a: Int, b: Int): Int {
         if (b == 0) return 0
         return a / b
+    }
+
+    private fun recursivePrint(num: Int) {
+        var up = num
+        if (up != 0) {
+            recursivePrint(++up)
+        }
     }
 }
